@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "happy-dom": "^17.4.7",
     "typescript": "~5.8.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
   },
   "dependencies": {
     "@arcgis/map-components": "^4.32.14"
