@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Southern California Coastal Flood Hazards</title>
+    <script type="module" src="/src/auth.ts"></script>
+  </head>
+  <body>
+    <script type="module" src="/src/map.ts"></script>
+    <div id="root">
+      <arcgis-map
+        basemap="arcgis/topographic"
+        center="-117.9988, 33.6595"
+        zoom="9"
+      >
+        <arcgis-zoom position="top-left"></arcgis-zoom>
+      </arcgis-map>
+      <fetch-feature-layer
+        id="coastal-buffer"
+        layer="https://services3.arcgis.com/uknczv4rpevve42E/arcgis/rest/services/California_County_Boundaries_and_Identifiers_with_Coastal_Buffers/FeatureServer/1"
+        expression="OFFSHORE IS NOT NULL AND CDTFA_COUNTY in ('Santa Barbara County', 'Ventura County', 'Los Angeles County', 'Orange County', 'San Diego County', 'San Luis Obispo County', 'Imperial County')"
+      ></fetch-feature-layer>
+      <!-- <fetch-feature-layer
+        id="access-points"
+        layer="https://services9.arcgis.com/wwVnNW92ZHUIr0V0/arcgis/rest/services/AccessPoints/FeatureServer/0/"
+        definitionExpression="COUNTY IN ('Santa Barbara', 'Ventura', 'Los Angeles', 'Orange', 'San Diego', 'San Luis Obispo', 'Imperial')"
+      ></fetch-feature-layer> -->
+      <fetch-feature-layer
+        id="flood-hazard"
+        layer="https://services2.arcgis.com/Uq9r85Potqm3MfRV/arcgis/rest/services/S_FLD_HAZ_AR_Reduced_Set_CA_wm/FeatureServer"
+      ></fetch-feature-layer>
+      <process-and-display-data></process-and-display-data>
+      <toggle-layer></toggle-layer>
+    </div>
+  </body>
+</html>
