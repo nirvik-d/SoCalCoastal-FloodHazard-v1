@@ -11,7 +11,7 @@ A web application visualizing flood hazard zones for Southern California coastal
 
 ## Screenshots
 
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/a38a9f35-f8fe-4b1c-aa67-19223edb43b9" />
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/7fb8acce-97d2-466c-9aab-ab252cd40510" />
 
 *Interactive flood hazard visualization*
 
